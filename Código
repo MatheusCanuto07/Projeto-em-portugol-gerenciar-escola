@@ -1,0 +1,778 @@
+Algoritmo "SA"
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 16/11/2020
+
+Tipo
+
+   PROCESSO=registro
+      nome_aluno:caracter
+      cpf_aluno:caracter
+      data_nascimento:caracter
+      curso:caracter
+      data_prova:caracter
+   fimregistro
+
+   TURMAS01=registro
+      turma1:caracter
+      periodo1:caracter
+      Turno1:caracter
+      codigo_matricula1:inteiro
+      nome_aluno1:caracter
+      data_nascimento1:caracter
+      endereco1:caracter
+      bairro1:caracter
+      CPF1:caracter
+      pai1:caracter
+      mae1:caracter
+      nota011:real
+      nota021:real
+      nota031:real
+      nota041:real
+   fimregistro
+
+   TURMAS02=registro
+      turma2:caracter
+      periodo2:caracter
+      Turno2:caracter
+      codigo_matricula2:inteiro
+      nome_aluno2:caracter
+      data_nascimento2:caracter
+      endereco2:caracter
+      bairro2:caracter
+      CPF2:caracter
+      pai2:caracter
+      mae2:caracter
+      nota012:real
+      nota022:real
+      nota032:real
+      nota042:real
+   fimregistro
+
+   TURMAS03=registro
+      turma3:caracter
+      periodo3:caracter
+      Turno3:caracter
+      codigo_matricula3:inteiro
+      nome_aluno3:caracter
+      data_nascimento3:caracter
+      endereco3:caracter
+      bairro3:caracter
+      CPF3:caracter
+      pai3:caracter
+      mae3:caracter
+      nota013:real
+      nota023:real
+      nota033:real
+      nota043:real
+   fimregistro
+
+   TURMAS04=registro
+      turma4:caracter
+      periodo4:caracter
+      Turno4:caracter
+      codigo_matricula4:inteiro
+      nome_aluno4:caracter
+      data_nascimento4:caracter
+      endereco4:caracter
+      bairro4:caracter
+      CPF4:caracter
+      pai4:caracter
+      mae4:caracter
+      nota014:real
+      nota024:real
+      nota034:real
+      nota044:real
+   fimregistro
+
+   TURMAS05=registro
+      turma5:caracter
+      periodo5:caracter
+      Turno5:caracter
+      codigo_matricula5:inteiro
+      nome_aluno5:caracter
+      data_nascimento5:caracter
+      endereco5:caracter
+      bairro5:caracter
+      CPF5:caracter
+      pai5:caracter
+      mae5:caracter
+      nota015:real
+      nota025:real
+      nota035:real
+      nota045:real
+   fimregistro
+
+   docente=registro
+      Nome:caracter
+      Disciplina:caracter
+      Status:caracter
+   fimregistro
+
+Var
+   celetivo:vetor[1..5] de processo
+   curso01:vetor[1..5] de Turmas01
+   curso02:vetor[1..5] de Turmas02
+   curso03:vetor[1..5] de Turmas03
+   curso04:vetor[1..5] de Turmas04
+   curso05:vetor[1..5] de Turmas05
+   doc:vetor[1..5] de docente
+   
+   MediaEscola : real
+   MediaEscolaV : vetor [1..5] de real
+   MediaTurma : real
+   MediaTurmaV : vetor [1..5] de real
+   Impressao : inteiro
+   
+
+   menu,cadastramento,notas,consulta,i,resp,resp1,resp2:inteiro
+   acha:logico
+   resposta,docentes,resposta01,resposta02,alunos:caractere
+   med_alunos:real
+
+inicio
+   repita
+      limpatela
+      Escreval(" _____________________________________")
+      Escreval("|                                     |")
+      Escreval("|           Sistema Escolar           |")
+      Escreval("|            Área do menu             |")
+      Escreval("|_____________________________________|")
+      Escreval("|                                     |")
+      Escreval("| 1|Área Cadastramento                |")
+      Escreval("| 2|Área de Consulta                  |")
+      Escreval("| 3|Área de Notas                     |")
+      Escreval("| 4|Área de Impressão                 |")
+      Escreval("|_____________________________________|")
+      Escreva("  Insira a opção desejada:")
+      Leia(menu)
+
+      escolha(menu)
+      caso 1
+         limpatela
+         Escreval(" _____________________________________")
+         Escreval("|                                     |")
+         Escreval("|           Sistema Escolar           |")
+         Escreval("|        Área do Cadastramento        |")
+         Escreval("|_____________________________________|")
+         Escreval("|                                     |")
+         Escreval("| 1|Processo Seletivo                 |")
+         Escreval("| 2|Turmas e Alunos                   |")
+         Escreval("| 3|Professores                       |")
+         Escreval("| Aperte enter para voltar ao menu    |")
+         Escreval("|_____________________________________|")
+         Escreva("  Insira a opção desejada:")
+         Leia(cadastramento)
+
+         escolha(cadastramento)
+         caso 1
+
+            limpatela
+            Escreval(" _______________________________________________")
+            Escreval("|                                               |")
+            Escreval("|    Cadastramento para o Processo Celetivo.    |")
+            Escreval("|_______________________________________________|")
+
+            para i de 1 ate 5 faca
+               Escreval("Cadastramento processo número", i)
+               Escreval("Insira o nome do aluno:")
+               Leia(celetivo[i].nome_aluno)
+               Escreval("Insira o CPF do aluno:")
+               Leia(celetivo[i].cpf_aluno)
+               Escreval("Data de nascimento do aluno:")
+               Leia(celetivo[i].data_nascimento)
+               Escreval("Curso do aluno:")
+               Leia(celetivo[i].curso)
+               Escreval("Data da prova:")
+               Leia(celetivo[i].data_prova)
+               limpatela
+            fimpara
+            Escreval("Deseja voltar ao menu?")
+            Escreval("Sim = 1        Nao = 2")
+            Leia(resp)
+            limpatela
+
+         caso 2
+
+            limpatela
+            Escreval(" _______________________________________________")
+            Escreval("|                                               |")
+            Escreval("|       Cadastramento de Turmas e Alunos        |")
+            Escreval("|_______________________________________________|")
+
+            Escreval("Deseja cadastrar o aluno em qual turma?")
+
+            Escreval(" _____________________________________")
+            Escreval("|                                     |")
+            Escreval("| 1|Analista de Sistemas              |")
+            Escreval("| 2|Redes                             |")
+            Escreval("| 3|Banco de Dados                    |")
+            Escreval("| 4|Técnico Informatica               |")
+            Escreval("| 5|Administração                     |")
+            Escreval("| Aperte enter para voltar ao menu    |")
+            Escreval("|_____________________________________|")
+            Escreval(" Qual sua resposta?")
+            Leia(cadastramento)
+            limpatela
+            escolha (cadastramento)
+
+               limpatela
+            caso 1
+               para i de 1 ate 5 faca
+
+                  Escreval("Cadastramento número:", i)
+                  Escreval("Insira o nome da turma:")
+                  Leia(curso01[i].turma1)
+                  Escreval("Periodo do curso:")
+                  Leia(curso01[i].periodo1)
+                  Escreval("Turno do aluno:")
+                  Leia(curso01[i].turno1)
+                  Escreval("Código de Matricula do aluno:")
+                  Leia(curso01[i].codigo_matricula1)
+                  Escreval("Insira o nome do aluno:")
+                  Leia(curso01[i].nome_aluno1)
+                  Escreval("Data de nascimento do aluno:")
+                  Leia(curso01[i].data_nascimento1)
+                  Escreval("Insira o Endereço do aluno:")
+                  Leia(curso01[i].endereco1)
+                  Escreval("Insira o bairro do aluno:")
+                  Leia(curso01[i].bairro1)
+                  Escreval("Insira o CPF do aluno:")
+                  Leia(curso01[i].CPF1)
+                  Escreval("Insira o nome do pai do aluno:")
+                  Leia(curso01[i].pai1)
+                  Escreval("Insira o nome da mãe do aluno:")
+                  Leia(curso01[i].mae1)
+                  limpatela
+               fimpara
+
+               Escreval(" _______________________________________________")
+               Escreval("|                                               |")
+               Escreval("|            Cadastramento das Notas            |")
+               Escreval("|_______________________________________________|")
+
+               para i de 1 ate 5 faca
+
+                  Escreval("Cadastramento número", i)
+                  Escreval("Aluno:", curso01[i].nome_aluno1)
+                  Escreval("Insira as notas:")
+                  Escreval("Nota 1:")
+                  Leia(curso01[i].nota011)
+                  Escreval("Nota 2:")
+                  Leia(curso01[i].nota021)
+                  Escreval("Nota 3:")
+                  Leia(curso01[i].nota031)
+                  Escreval("Nota 4:")
+                  Leia(curso01[i].nota041)
+                  limpatela
+               fimpara
+
+               Escreval("Deseja voltar ao menu?")
+               Escreval("Sim = 1        Nao = 2")
+               Leia(resp)
+               limpatela
+
+            caso 2
+               para i de 1 ate 5 faca
+
+                  Escreval("Cadastramento número:", i)
+                  Escreval("Insira o nome da turma:")
+                  Leia(curso02[i].turma2)
+                  Escreval("Periodo do curso:")
+                  Leia(curso02[i].periodo2)
+                  Escreval("Turno do aluno:")
+                  Leia(curso02[i].turno2)
+                  Escreval("Código de Matricula do aluno:")
+                  Leia(curso02[i].codigo_matricula2)
+                  Escreval("Insira o nome do aluno:")
+                  Leia(curso02[i].nome_aluno2)
+                  Escreval("Data de nascimento do aluno:")
+                  Leia(curso02[i].data_nascimento2)
+                  Escreval("Insira o Endereço do aluno:")
+                  Leia(curso02[i].endereco2)
+                  Escreval("Insira o bairro do aluno:")
+                  Leia(curso02[i].bairro2)
+                  Escreval("Insira o CPF do aluno:")
+                  Leia(curso02[i].CPF2)
+                  Escreval("Insira o nome do pai do aluno:")
+                  Leia(curso02[i].pai2)
+                  Escreval("Insira o nome da mãe do aluno:")
+                  Leia(curso02[i].mae2)
+                  limpatela
+               fimpara
+
+               Escreval(" _______________________________________________")
+               Escreval("|                                               |")
+               Escreval("|            Cadastramento das Notas            |")
+               Escreval("|_______________________________________________|")
+
+               para i de 1 ate 5 faca
+
+                  Escreval("Cadastramento número", i)
+                  Escreval("Aluno:", curso02[i].nome_aluno2)
+                  Escreval("Insira as notas:")
+                  Escreval("Nota 1:")
+                  Leia(curso02[i].nota012)
+                  Escreval("Nota 2:")
+                  Leia(curso02[i].nota022)
+                  Escreval("Nota 3:")
+                  Leia(curso02[i].nota032)
+                  Escreval("Nota 4:")
+                  Leia(curso02[i].nota042)
+                  limpatela
+               fimpara
+
+               Escreval("Deseja voltar ao menu?")
+               Escreval("Sim = 1        Nao = 2")
+               Leia(resp)
+               limpatela
+
+            caso 3
+               para i de 1 ate 5 faca
+
+                  Escreval("Cadastramento número:", i)
+                  Escreval("Insira o nome da turma:")
+                  Leia(curso03[i].turma3)
+                  Escreval("Periodo do curso:")
+                  Leia(curso03[i].periodo3)
+                  Escreval("Turno do aluno:")
+                  Leia(curso03[i].turno3)
+                  Escreval("Código de Matricula do aluno:")
+                  Leia(curso03[i].codigo_matricula3)
+                  Escreval("Insira o nome do aluno:")
+                  Leia(curso03[i].nome_aluno3)
+                  Escreval("Data de nascimento do aluno:")
+                  Leia(curso03[i].data_nascimento3)
+                  Escreval("Insira o Endereço do aluno:")
+                  Leia(curso03[i].endereco3)
+                  Escreval("Insira o bairro do aluno:")
+                  Leia(curso03[i].bairro3)
+                  Escreval("Insira o CPF do aluno:")
+                  Leia(curso03[i].CPF3)
+                  Escreval("Insira o nome do pai do aluno:")
+                  Leia(curso03[i].pai3)
+                  Escreval("Insira o nome da mãe do aluno:")
+                  Leia(curso03[i].mae3)
+                  limpatela
+
+                  Escreval(" _______________________________________________")
+                  Escreval("|                                               |")
+                  Escreval("|            Cadastramento das Notas            |")
+                  Escreval("|_______________________________________________|")
+
+                  para i de 1 ate 5 faca
+
+                     Escreval("Cadastramento número", i)
+                     Escreval("Aluno:", curso03[i].nome_aluno3)
+                     Escreval("Insira as notas:")
+                     Escreval("Nota 1:")
+                     Leia(curso03[i].nota013)
+                     Escreval("Nota 2:")
+                     Leia(curso03[i].nota023)
+                     Escreval("Nota 3:")
+                     Leia(curso03[i].nota033)
+                     Escreval("Nota 4:")
+                     Leia(curso03[i].nota043)
+                     limpatela
+                  fimpara
+
+                  Escreval("Deseja voltar ao menu?")
+                  Escreval("Sim = 1        Nao = 2")
+                  Leia(resp)
+                  limpatela
+
+               caso 4
+                  para i de 1 ate 5 faca
+
+                     Escreval("Cadastramento número:", i)
+                     Escreval("Insira o nome da turma:")
+                     Leia(curso04[i].turma4)
+                     Escreval("Periodo do curso:")
+                     Leia(curso04[i].periodo4)
+                     Escreval("Turno do aluno:")
+                     Leia(curso04[i].turno4)
+                     Escreval("Código de Matricula do aluno:")
+                     Leia(curso04[i].codigo_matricula4)
+                     Escreval("Insira o nome do aluno:")
+                     Leia(curso04[i].nome_aluno4)
+                     Escreval("Data de nascimento do aluno:")
+                     Leia(curso04[i].data_nascimento4)
+                     Escreval("Insira o Endereço do aluno:")
+                     Leia(curso04[i].endereco4)
+                     Escreval("Insira o bairro do aluno:")
+                     Leia(curso04[i].bairro4)
+                     Escreval("Insira o CPF do aluno:")
+                     Leia(curso04[i].CPF4)
+                     Escreval("Insira o nome do pai do aluno:")
+                     Leia(curso04[i].pai4)
+                     Escreval("Insira o nome da mãe do aluno:")
+                     Leia(curso04[i].mae4)
+                     limpatela
+                  fimpara
+                  Escreval(" _______________________________________________")
+                  Escreval("|                                               |")
+                  Escreval("|            Cadastramento das Notas            |")
+                  Escreval("|_______________________________________________|")
+
+                  para i de 1 ate 5 faca
+
+                     Escreval("Cadastramento número", i)
+                     Escreval("Aluno:", curso04[i].nome_aluno4)
+                     Escreval("Insira as notas:")
+                     Escreval("Nota 1:")
+                     Leia(curso04[i].nota014)
+                     Escreval("Nota 2:")
+                     Leia(curso04[i].nota024)
+                     Escreval("Nota 3:")
+                     Leia(curso04[i].nota034)
+                     Escreval("Nota 4:")
+                     Leia(curso04[i].nota044)
+                     limpatela
+                  fimpara
+
+                  Escreval("Deseja voltar ao menu?")
+                  Escreval("Sim = 1        Nao = 2")
+                  Leia(resp)
+                  limpatela
+
+               caso 5
+                  para i de 1 ate 5 faca
+
+                     Escreval("Cadastramento número:", i)
+                     Escreval("Insira o nome da turma:")
+                     Leia(curso05[i].turma5)
+                     Escreval("Periodo do curso:")
+                     Leia(curso05[i].periodo5)
+                     Escreval("Turno do aluno:")
+                     Leia(curso05[i].turno5)
+                     Escreval("Código de Matricula do aluno:")
+                     Leia(curso05[i].codigo_matricula5)
+                     Escreval("Insira o nome do aluno:")
+                     Leia(curso05[i].nome_aluno5)
+                     Escreval("Data de nascimento do aluno:")
+                     Leia(curso05[i].data_nascimento5)
+                     Escreval("Insira o Endereço do aluno:")
+                     Leia(curso05[i].endereco5)
+                     Escreval("Insira o bairro do aluno:")
+                     Leia(curso05[i].bairro5)
+                     Escreval("Insira o CPF do aluno:")
+                     Leia(curso05[i].CPF5)
+                     Escreval("Insira o nome do pai do aluno:")
+                     Leia(curso05[i].pai5)
+                     Escreval("Insira o nome da mãe do aluno:")
+                     Leia(curso05[i].mae5)
+                     limpatela
+                  fimpara
+                  Escreval(" _______________________________________________")
+                  Escreval("|                                               |")
+                  Escreval("|            Cadastramento das Notas            |")
+                  Escreval("|_______________________________________________|")
+
+                  para i de 1 ate 5 faca
+
+                     Escreval("Cadastramento número", i)
+                     Escreval("Aluno:", curso05[i].nome_aluno5)
+                     Escreval("Insira as notas:")
+                     Escreval("Nota 1:")
+                     Leia(curso05[i].nota015)
+                     Escreval("Nota 2:")
+                     Leia(curso05[i].nota025)
+                     Escreval("Nota 3:")
+                     Leia(curso05[i].nota035)
+                     Escreval("Nota 4:")
+                     Leia(curso05[i].nota045)
+                     limpatela
+                  fimpara
+
+                  Escreval("Deseja voltar ao menu?")
+                  Escreval("Sim = 1        Nao = 2")
+                  Leia(resp)
+                  limpatela
+               fimescolha
+
+            caso 3
+               limpatela
+               Escreval(" _______________________________________________")
+               Escreval("|                                               |")
+               Escreval("|           Cadastramento de Docentes           |")
+               Escreval("|_______________________________________________|")
+
+               para i de 1 ate 5 faca
+                  Escreval("Cadastramento número", i)
+                  Escreval("Nome do Professor:")
+                  Leia(doc[i].nome)
+                  Escreval("Disciplina do Professor:")
+                  Leia(doc[i].Disciplina)
+                  Escreval("Status do professor:ativo/inativo")
+                  Leia(Doc[i].status)
+                  limpatela
+               fimpara
+               Escreval("Deseja voltar ao menu?")
+               Escreval("Sim = 1        Nao = 2")
+               Leia(resp)
+               limpatela
+            fimescolha
+
+
+
+         caso 2
+
+            limpatela
+            Escreval(" _____________________________________")
+            Escreval("|                                     |")
+            Escreval("|           Sistema Escolar           |")
+            Escreval("|           Área da Consulta          |")
+            Escreval("|_____________________________________|")
+            Escreval("|                                     |")
+            Escreval("| 1|Professores                       |")
+            Escreval("| 2|Alunos                            |")
+            Escreval("| 3|Processo Celetivo                 |")
+            Escreval("| Aperte enter para voltar ao menu    |")
+            Escreval("|_____________________________________|")
+            Escreva("  Insira a opção desejada:")
+            Leia(resp1)
+
+            escolha(resp1)
+
+            caso 1
+               repita
+                  limpatela
+                  Escreval(" _______________________________________________")
+                  Escreval("|                                               |")
+                  Escreval("|            Pesquisa de Professores            |")
+                  Escreval("|_______________________________________________|")
+
+                  Escreva("Insira o nome do professor desejado:")
+                  Leia(docentes)
+                  i <- 1
+                  acha <- falso
+                  enquanto (i<=5) e (acha=falso)faca
+                     se(docentes=doc[i].Nome)entao
+                        acha <- verdadeiro
+                     senao
+                        i <- i+1
+                     fimse
+                  fimenquanto
+                  se(acha=verdadeiro) entao
+                     Escreval("Nome do professor:", doc[i].Nome)
+                     Escreval("Disciplina do professor:", doc[i].disciplina)
+                     Escreval("Status do Professor:", doc[i].status)
+                  senao
+                     Escreval("Professor Inexistente!!")
+                  fimse
+                  Escreval("Deseja continuar a pesquisa?sim/nao")
+                  Leia(resposta)
+                  limpatela
+               ate resposta = "nao"
+               /////////////////////////////////////////////////////////
+            caso 2
+               repita
+                  limpatela
+                  Escreval(" _______________________________________________")
+                  Escreval("|                                               |")
+                  Escreval("|              Pesquisa de Alunos               |")
+                  Escreval("|_______________________________________________|")
+                  Escreval("Qual o curso do aluno?")
+                  Escreval(" _____________________________________")
+                  Escreval("|                                     |")
+                  Escreval("| 1|Analista de Sistemas              |")
+                  Escreval("| 2|Redes                             |")
+                  Escreval("| 3|Banco de Dados                    |")
+                  Escreval("| 4|Técnico Informatica               |")
+                  Escreval("| 5|Administração                     |")
+                  Escreval("| Aperte enter para voltar ao menu    |")
+                  Escreval("|_____________________________________|")
+                  Escreval(" Qual sua resposta?")
+                  Leia(resp2)
+                  escolha(resp2)
+
+                  caso 1
+                     repita
+                        Escreval("Pesquisa Alunos de Analista de Sistemas")
+                        Escreval("Insira o nome do aluno desejado:")
+                        Leia(alunos)
+                        i <- 1
+                        acha <- falso
+                        enquanto (i<=5) e (acha=falso)faca
+                           se(alunos=curso01[i].nome_aluno1)entao
+                              acha <- verdadeiro
+                           senao
+                              i <- i+1
+                           fimse
+                        fimenquanto
+                        se(acha=verdadeiro) entao
+                           Escreval("Nome da turma:")
+                           Escreval(curso01[i].turma1)
+                           Escreval("Periodo de Estudo:")
+                           Escreval(curso01[i].periodo1)
+                           Escreval("Turno do aluno:")
+                           Escreval(curso01[i].turno1)
+                           Escreval("Código de matricula do aluno:")
+                           Escreval(curso01[i].codigo_matricula1)
+                           Escreval("Nome do aluno:")
+                           Escreval(curso01[i].nome_aluno1)
+                           Escreval("Data de Nascimento:")
+                           Escreval(curso01[i].data_nascimento1)
+                           Escreval("Endereço do aluno:")
+                           Escreval(curso01[i].endereco1)
+                           Escreval("Bairro do aluno:")
+                           Escreval(curso01[i].bairro1)
+                           Escreval("CPF do aluno:")
+                           Escreval(curso01[i].CPF1)
+                           Escreval("Nome do pai do aluno:")
+                           Escreval(curso01[i].pai1)
+                           Escreval("Nome da mãe do aluno:")
+                           Escreval(curso01[i].mae1)
+                           Escreval("Notas do aluno:")
+                           Escreval("Nota 1:", curso01[i].nota011)
+                           Escreval("Nota 2:", curso01[i].nota021)
+                           Escreval("Nota 3:", curso01[i].nota031)
+                           Escreval("Nota 4:", curso01[i].nota041)
+                           med_alunos <- (curso01[i].nota011+curso01[i].nota021+curso01[i].nota031+curso01[i].nota041)/4
+                           Escreval("Média:", med_alunos)
+                        senao
+                           Escreval("Aluno Inexistente!!")
+                        fimse
+                        Escreval("Deseja continuar a pesquisa?sim/nao")
+                        Leia(resposta01)
+                        limpatela
+                     ate resposta01 = "nao"
+
+                  caso 2
+                     repita
+                        Escreval("Pesquisa Alunos de Analista de Sistemas")
+                        Escreval("Insira o nome do aluno desejado:")
+                        Leia(alunos)
+                        i <- 1
+                        acha <- falso
+                        enquanto (i<=5) e (acha=falso)faca
+                           se(alunos=curso02[i].nome_aluno2)entao
+                              acha <- verdadeiro
+                           senao
+                              i <- i+1
+                           fimse
+                        fimenquanto
+                        se(acha=verdadeiro) entao
+                           Escreval("Nome da turma:")
+                           Escreval(curso02[i].turma2)
+                           Escreval("Periodo de Estudo:")
+                           Escreval(curso02[i].periodo2)
+                           Escreval("Turno do aluno:")
+                           Escreval(curso02[i].turno2)
+                           Escreval("Código de matricula do aluno:")
+                           Escreval(curso02[i].codigo_matricula2)
+                           Escreval("Nome do aluno:")
+                           Escreval(curso02[i].nome_aluno2)
+                           Escreval("Data de Nascimento:")
+                           Escreval(curso02[i].data_nascimento2)
+                           Escreval("Endereço do aluno:")
+                           Escreval(curso02[i].endereco2)
+                           Escreval("Bairro do aluno:")
+                           Escreval(curso02[i].bairro2)
+                           Escreval("CPF do aluno:")
+                           Escreval(curso02[i].CPF2)
+                           Escreval("Nome do pai do aluno:")
+                           Escreval(curso02[i].pai2)
+                           Escreval("Nome da mãe do aluno:")
+                           Escreval(curso02[i].mae2)
+                           Escreval("Notas do aluno:")
+                           Escreval("Nota 1:", curso02[i].nota012)
+                           Escreval("Nota 2:", curso02[i].nota022)
+                           Escreval("Nota 3:", curso02[i].nota032)
+                           Escreval("Nota 4:", curso02[i].nota042)
+                           med_alunos <- (curso02[i].nota012+curso02[i].nota022+curso02[i].nota032+curso02[i].nota042)/4
+                           Escreval("Média:", med_alunos)
+                        senao
+                           Escreval("Aluno Inexistente!!")
+                        fimse
+                        Escreval("Deseja continuar a pesquisa?sim/nao")
+                        Leia(resposta02)
+                        limpatela
+                     ate resposta02 = "nao"
+
+
+
+
+                  fimescolha
+               caso 3
+
+               fimescolha
+
+            caso 3
+
+               Escreval(" _____________________________________")
+               Escreval("|                                     |")
+               Escreval("|           Sistema Escolar           |")
+               Escreval("|            Área de notas            |")
+               Escreval("|_____________________________________|")
+               Escreval("|                                     |")
+               Escreval("| 1|Média da Sala                     |")
+               Escreval("| 2|Média da Escola                   |")
+               Escreval("| Aperte enter para voltar ao menu    |")
+               Escreval("|_____________________________________|")
+               Escreva("  Insira a opção desejada:")
+               Leia(notas)
+            caso 4
+            fimescolha
+            limpatela
+            para i de 1 ate 5 faca
+            MediaEscolaV[i] <- curso01[i].nota011+curso01[i].nota021+curso01[i].nota031+curso01[i].nota041
+            fimpara
+            MediaEscola <-(MediaEscolaV[1]+MediaEscolaV[2]+MediaEscolaV[3]+MediaEscolaV[4]+MediaEscolaV[5])/5
+      caso 4
+      Escreval(" _____________________________________")
+      Escreval("|                                     |")
+      Escreval("|           Sistema Escolar           |")
+      Escreval("|          Área da impressão          |")
+      Escreval("|_____________________________________|")
+      Escreval("|                                     |")
+      Escreval("| 1|Media escola                      |")//Pronto
+      Escreval("| 2|Media turma                       |")//Pronto
+      Escreval("| 3|Professores                       |")//pronto
+      Escreval("|_____________________________________|")
+      Escreva("  Insira a opção desejada:")
+      Leia (Impressao)
+      escolha impressao
+      Caso 1
+                  Escreval(" _______________________________________________")
+                  Escreval("|                                               |")
+                  Escreval("|                 Média da escola               |")
+                  Escreval("|_______________________________________________|")
+                  Escreval ("A média da escola foi de ",MediaEscola)
+                  Leia (Impressao)
+      Caso 2
+                  Escreval(" _______________________________________________")
+                  Escreval("|                                               |")
+                  Escreval("|                 Média da turmas               |")
+                  Escreval("|_______________________________________________|")
+                  Escreval ("As médias das turmas é :")
+
+                  Escreval ("Media turma 1")
+                  Escreval (MediaEscolaV[1])
+                  
+                  Escreval ("Media turma 2")
+                  Escreval (MediaEscolaV[2])
+                  
+                  Escreval ("Media turma 3")
+                  Escreval (MediaEscolaV[3])
+                  
+                  Escreval ("Media turma 4")
+                  Escreval (MediaEscolaV[4])
+                  
+                  Escreval ("Media turma 5")
+                  Escreval (MediaEscolaV[5])
+                  Leia (Impressao)
+       caso 3
+                  Escreval(" _______________________________________________")
+                  Escreval("|                                               |")
+                  Escreval("|                 Professores                   |")
+                  Escreval("|_______________________________________________|")
+                  para i de 1 ate 5 faca
+                  Escreval("Nome do professor:", doc[i].Nome)
+                  Escreval("Disciplina do professor:", doc[i].disciplina)
+                  Escreval("Status do Professor:", doc[i].status)
+                  fimpara
+                  Leia (Impressao)
+         fimescolha
+         ate resp=2
+fimalgoritmo
